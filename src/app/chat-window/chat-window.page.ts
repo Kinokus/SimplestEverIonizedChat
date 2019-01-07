@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MessagesService} from '../messages.service';
 
+
 @Component({
     selector: 'app-chat-window',
     templateUrl: './chat-window.page.html',
@@ -9,14 +10,24 @@ import {MessagesService} from '../messages.service';
 export class ChatWindowPage implements OnInit {
 
     placeholder = 'message text';
+    messageInput: string;
 
-    constructor(messagesService: MessagesService) {
+
+    constructor(private messagesService: MessagesService) {
     }
 
     ngOnInit() {
     }
 
     sendMessage() {
+        this.messagesService
+            .sendMessage(this.messageInput)
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
 

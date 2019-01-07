@@ -1,12 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>ChatWindow</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>ChatWindow</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-input [placeholder]="placeholder">
-  </ion-input>
-  some content
+    <ion-input
+            [placeholder]="placeholder"
+            (keyup.enter)="sendMessage()"
+            [(ngModel)]="messageInput"
+    ></ion-input>
+
+    some content got from server
 
 </ion-content>

@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  res.send('respond to post with a resource messages');
+  res.send({ok:true});
 });
 
 
