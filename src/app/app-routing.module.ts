@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  }
+  },
+  { path: 'chat-window', loadChildren: './chat-window/chat-window.module#ChatWindowPageModule' }
 ];
 
 @NgModule({
