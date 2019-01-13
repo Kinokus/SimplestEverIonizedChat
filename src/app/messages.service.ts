@@ -8,8 +8,8 @@ import {Location} from '@angular/common';
 })
 export class MessagesService {
 
-    sendMessage(message) {
-        return this.http.post(`message`, {message: message}).toPromise();
+    sendMessage(messageText, messageFrom) {
+        return this.http.post(`message`, {message: messageText, from: messageFrom}).toPromise();
         // return this.http.post(`${window.location.hostname}:3000/message`, {message: message}).toPromise();
     }
 

@@ -11,6 +11,12 @@
             [(ngModel)]="messageInput"
     ></ion-input>
 
-    some content got from server
+    <ion-input class="user-name" [(ngModel)]="messageFrom"></ion-input>
+
+
+
+    <i><span>{{serverResponse}}</span></i>
+    <span class="message" *ngFor="let message of messages ; index as i">{{i}} - {{message | json}}<br></span>
+
 
 </ion-content>

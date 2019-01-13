@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MessagesService} from '../messages.service';
+import {ChatServerResponse} from '../chat-server-response';
 
 
 @Component({
@@ -11,6 +12,9 @@ export class ChatWindowPage implements OnInit {
 
     placeholder = 'message text';
     messageInput: string;
+    messageFrom: string;
+    serverResponse: string;
+    messages: any;
 
 
     constructor(private messagesService: MessagesService) {
@@ -21,8 +25,10 @@ export class ChatWindowPage implements OnInit {
 
     sendMessage() {
         this.messagesService
-            .sendMessage(this.messageInput)
-            .then((data) => {
+            .sendMessage(this.messageInput, this.messageFrom)
+            .then((data: ChatServerResponse) => {
+                this.serverResponse = data.status;
+                this.messages = data.messages;
                 console.log(data);
             })
             .catch((err) => {
