@@ -6,12 +6,16 @@
 
 <ion-content padding>
     <ion-input
-            [placeholder]="placeholder"
+            [placeholder]="placeholderMessage"
             (keyup.enter)="sendMessage()"
             [(ngModel)]="messageInput"
     ></ion-input>
 
-    <ion-input class="user-name" [(ngModel)]="messageFrom"></ion-input>
+    <ion-input
+            class="user-name"
+            [(ngModel)]="messageFrom"
+            [placeholder]="placeholderFrom"
+    ></ion-input>
 
 
 

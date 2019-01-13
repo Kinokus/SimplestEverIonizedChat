@@ -10,8 +10,9 @@ import {ChatServerResponse} from '../chat-server-response';
 })
 export class ChatWindowPage implements OnInit {
 
-    placeholder = 'message text';
     messageInput: string;
+    placeholderMessage = 'message text';
+    placeholderFrom = 'message from';
     messageFrom: string;
     serverResponse: string;
     messages: any;
